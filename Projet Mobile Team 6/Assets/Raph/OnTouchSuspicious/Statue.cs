@@ -52,6 +52,7 @@ public class Statue : MonoBehaviour
                 used = true;
                 GameManager.StaticMaxManifestation--;
                 GameObject.Find("GameManager").GetComponent<GameManager>().UpdateUiText();
+                herocoll2d.gameObject.GetComponent<Animator>().SetTrigger("Fear");
                 switch (orientation)
                 {
 

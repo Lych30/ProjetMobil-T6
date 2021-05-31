@@ -6,11 +6,14 @@ using Pathfinding;
     public class check : MonoBehaviour
     {
         private Transform[] attaches;
-        [SerializeField] GameObject GPS;
+        //[SerializeField] GameObject GPS;
+        private SpriteRenderer sr;
+        private Animator anim;
         AIPath _ai;
         void Start()
         {
-
+            sr = GetComponent<SpriteRenderer>();
+            anim = GetComponent<Animator>();
             var gg = AstarPath.active.data.gridGraph;
             _ai = GetComponent<AIPath>();
 
@@ -26,18 +29,21 @@ using Pathfinding;
         }
         private void Update()
         {
+            anim.SetFloat("VelocityX", Mathf.Abs(_ai.velocity.x));
+            anim.SetFloat("VelocityY", Mathf.Abs(_ai.velocity.y));
             if (Mathf.Abs(_ai.velocity.x) > Mathf.Abs(_ai.velocity.y))
             {
+                
                 if (_ai.velocity.x > 0)
                 {
-                    //Debug.Log("Right");
+                    sr.flipX = false;
                 }
                 else
                 {
-                    //Debug.Log("Left");
+                    sr.flipX = true;
                 }
             }
-            else
+           /* else
             {
                 if (_ai.velocity.y > 0)
                 {
@@ -47,7 +53,8 @@ using Pathfinding;
                 {
                     //Debug.Log("Down");
                 }
-            }
+            }*/
+            
 
             /*if (_ai.reachedEndOfPath)
             {
