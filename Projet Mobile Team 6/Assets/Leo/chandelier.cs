@@ -12,6 +12,8 @@ public class chandelier : MonoBehaviour
     private Shader shaderDefault;
     private Collider2D coll2d;
     private Collider2D herocoll2d;
+    [SerializeField]private Sprite[] debris;
+    private GameObject debrisGO;
     private const float GRIDSIZE = 3;
     private bool used;
 
@@ -45,10 +47,14 @@ public class chandelier : MonoBehaviour
         rb.gravityScale = 1;
         yield return new WaitForSeconds(1.63f);
         rend.enabled = false;
-        Instantiate(Debris, new Vector3(transform.position.x + GRIDSIZE, transform.position.y), new Quaternion());
-        Instantiate(Debris, new Vector3(transform.position.x - GRIDSIZE, transform.position.y), new Quaternion());
-        Instantiate(Debris, new Vector3(transform.position.x, transform.position.y + GRIDSIZE), new Quaternion());
-        Instantiate(Debris, new Vector3(transform.position.x, transform.position.y - GRIDSIZE), new Quaternion());
+        debrisGO = Instantiate(Debris, new Vector3(transform.position.x + GRIDSIZE, transform.position.y), new Quaternion());
+        debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
+        debrisGO = Instantiate(Debris, new Vector3(transform.position.x - GRIDSIZE, transform.position.y), new Quaternion());
+        debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
+        debrisGO = Instantiate(Debris, new Vector3(transform.position.x, transform.position.y + GRIDSIZE), new Quaternion());
+        debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
+        debrisGO = Instantiate(Debris, new Vector3(transform.position.x, transform.position.y - GRIDSIZE), new Quaternion());
+        debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
         coll2d.enabled = false;
         gameObject.layer = 3;
         Destroy(GetComponent<Rigidbody2D>());

@@ -37,7 +37,7 @@ public class Statue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+  
     }
 
     private void OnMouseDown()
@@ -78,4 +78,5 @@ public class Statue : MonoBehaviour
             }
         }
     }
+    
 }
