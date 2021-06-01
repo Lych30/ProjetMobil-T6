@@ -13,6 +13,7 @@ public class zoomPinch : MonoBehaviour
     {
         transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 0, transform.position.z);
         Camera.main.orthographicSize = 8;
+        
     }
     void Update()
     {

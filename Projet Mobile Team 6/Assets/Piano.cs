@@ -10,6 +10,7 @@ public class Piano : MonoBehaviour
     private Shader shaderDefault;
     private AIDestinationSetter Ai;
     private const float GRIDSIZE = 3;
+    public Animator anim;
     private bool used;
     private void Start()
     {
@@ -17,19 +18,20 @@ public class Piano : MonoBehaviour
         shaderDefault = Shader.Find("Unlit/Transparent");
         rend = GetComponent<SpriteRenderer>();
         Ai = GameObject.Find("Hero").GetComponent<AIDestinationSetter>();
+        anim = GetComponent<Animator>();
     }
-
-
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
         if (!used && GameManager.StaticMaxManifestation>0)
         {
+            anim.SetTrigger("music");
             used = true;
             rend.material.shader = shaderDefault;
-            Ai.SetTarget(Instantiate(Destination, new Vector3(transform.position.x, transform.position.y -  2 *GRIDSIZE), new Quaternion()));
+            Ai.SetTarget(Instantiate(Destination, new Vector3(transform.position.x, transform.position.y - 2 * GRIDSIZE), new Quaternion(),transform)); ;
             GameManager.StaticMaxManifestation--;
             GameObject.Find("GameManager").GetComponent<GameManager>().UpdateUiText();
             AstarPath.active.Scan();
         }
     }
+    
 }
