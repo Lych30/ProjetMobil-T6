@@ -34,11 +34,6 @@ public class Statue : MonoBehaviour
         AiPath = hero.GetComponent<AIPath>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-  
-    }
 
     private void OnMouseUpAsButton()
     {

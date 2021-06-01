@@ -81,8 +81,5 @@ public class InGameMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    void Accelerate()
-    {
-
-    }
+    
 }

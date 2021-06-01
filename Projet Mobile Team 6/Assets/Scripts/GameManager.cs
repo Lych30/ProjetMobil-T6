@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 1)
+       /* if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
             var TouchPos = Camera.main.ScreenPointToRay(touch.position);
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
                     
                 }
             }
-        }
+        }*/
     }
    
     public void UpdateUiText()
