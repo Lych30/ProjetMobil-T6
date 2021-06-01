@@ -30,7 +30,7 @@ using Pathfinding;
         private void Update()
         {
             anim.SetFloat("VelocityX", Mathf.Abs(_ai.velocity.x));
-            anim.SetFloat("VelocityY", Mathf.Abs(_ai.velocity.y));
+            anim.SetFloat("VelocityY", _ai.velocity.y);
             if (Mathf.Abs(_ai.velocity.x) > Mathf.Abs(_ai.velocity.y))
             {
                 
@@ -43,28 +43,15 @@ using Pathfinding;
                     sr.flipX = true;
                 }
             }
-           /* else
-            {
-                if (_ai.velocity.y > 0)
-                {
-                    //Debug.Log("Up");
-                }
-                else
-                {
-                    //Debug.Log("Down");
-                }
-            }*/
-            
-
-            /*if (_ai.reachedEndOfPath)
-            {
-            if (GPS.GetComponent<GooglePlayGamesManager>().IsConnectedToGPS)
-            {
-                Social.ReportProgress(GPGSIds.achievement_cheers_you_lost, 100.0f, null);
-            }
-        }*/
-
+        /*if (_ai.reachedEndOfPath)
+        {
+        if (GPS.GetComponent<GooglePlayGamesManager>().IsConnectedToGPS)
+        {
+            Social.ReportProgress(GPGSIds.achievement_cheers_you_lost, 100.0f, null);
         }
+    }*/
+
+    }
 
 
 

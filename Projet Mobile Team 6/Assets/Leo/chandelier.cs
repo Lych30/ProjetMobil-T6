@@ -13,6 +13,7 @@ public class chandelier : MonoBehaviour
     private Collider2D coll2d;
     private Collider2D herocoll2d;
     [SerializeField]private Sprite[] debris;
+    [SerializeField]private Sprite tombé;
     private GameObject debrisGO;
     private const float GRIDSIZE = 3;
     private bool used;
@@ -55,9 +56,11 @@ public class chandelier : MonoBehaviour
         debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
         debrisGO = Instantiate(Debris, new Vector3(transform.position.x, transform.position.y - GRIDSIZE), new Quaternion());
         debrisGO.GetComponent<SpriteRenderer>().sprite = debris[Random.Range(0, 3)];
+        debrisGO = Instantiate(Debris, transform.position, new Quaternion());
+        debrisGO.GetComponent<SpriteRenderer>().sprite = tombé;
         coll2d.enabled = false;
-        gameObject.layer = 3;
-        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(gameObject);
+        //Destroy(GetComponent<Rigidbody2D>());
         AstarPath.active.Scan();
     }
 }
