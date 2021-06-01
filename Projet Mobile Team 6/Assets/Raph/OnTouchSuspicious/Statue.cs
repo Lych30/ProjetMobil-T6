@@ -40,7 +40,7 @@ public class Statue : MonoBehaviour
   
     }
 
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
         if (coll2d != null && herocoll2d != null)
         {

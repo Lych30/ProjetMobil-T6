@@ -29,7 +29,7 @@ public class chandelier : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
         if (coll2d != null && herocoll2d != null)
         {
