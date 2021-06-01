@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132619597460993318, guid: 8d5ed33943badc64890825d76b8c2737, type: 3}
       propertyPath: m_SortingOrder
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5132619597460993319, guid: 8d5ed33943badc64890825d76b8c2737, type: 3}
       propertyPath: autoRandomSeed
