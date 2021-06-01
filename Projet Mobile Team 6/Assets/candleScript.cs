@@ -6,7 +6,12 @@ using UnityEngine;
 public class candleScript : MonoBehaviour
 {
     BoxCollider2D boxcol;
-    [SerializeField]bool isactivated = false;
+    private Shader shaderDefault;
+    bool isactivated;
+    private void Start()
+    {
+        shaderDefault = Shader.Find("Unlit/Transparent");
+    }
     public void OnMouseUpAsButton()
     {
         if(!isactivated)
@@ -15,10 +20,7 @@ public class candleScript : MonoBehaviour
             boxcol.size = new Vector3(10, 10, 3);
             AstarPath.active.Scan();
             GetComponent<Animator>().SetTrigger("Off");
-           /* foreach(Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-            }*/
+            GetComponent<SpriteRenderer>().material.shader = shaderDefault;
             isactivated = true;
         }
         
