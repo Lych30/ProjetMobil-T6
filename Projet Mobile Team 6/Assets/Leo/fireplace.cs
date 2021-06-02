@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class fireplace : MonoBehaviour
 {
@@ -25,13 +26,23 @@ public class fireplace : MonoBehaviour
     {
         if (!used && GameManager.StaticMaxTrap > 0)
         {
-            used = true;
-            rend.material.shader = shaderDefault;
-            Instantiate(Flamme, new Vector3(transform.position.x, transform.position.y - GRIDSIZE), new Quaternion());
-            Instantiate(Flamme, new Vector3(transform.position.x, transform.position.y - 2 * GRIDSIZE), new Quaternion());
-            AstarPath.active.Scan();
-            GameManager.StaticMaxTrap--;
+            StartCoroutine("FlammeTrigger");
+
         }
+    }
+    IEnumerator FlammeTrigger()
+    {
+        GetComponent<Animator>().SetTrigger("Trigger");
+        used = true;
+        rend.material.shader = shaderDefault;
+        Instantiate(Flamme, new Vector3(transform.position.x, transform.position.y - GRIDSIZE), new Quaternion());
+        Instantiate(Flamme, new Vector3(transform.position.x, transform.position.y - 2 * GRIDSIZE), new Quaternion());
+        GameManager.StaticMaxTrap--;
+        AstarPath.active.Scan();
+        yield return new WaitForSeconds(1);
+        GetComponent<Animator>().SetTrigger("End");
+        AstarPath.active.Scan();
+
     }
 
 }
