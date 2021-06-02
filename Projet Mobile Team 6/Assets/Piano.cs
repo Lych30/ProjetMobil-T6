@@ -31,6 +31,7 @@ public class Piano : MonoBehaviour
             GameManager.StaticMaxManifestation--;
             GameObject.Find("GameManager").GetComponent<GameManager>().UpdateUiText();
             AstarPath.active.Scan();
+            
         }
     }
     
