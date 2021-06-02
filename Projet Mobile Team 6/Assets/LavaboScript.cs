@@ -16,7 +16,7 @@ public class LavaboScript : MonoBehaviour
     private void Start()
     {
         used = false;
-        shaderDefault = Shader.Find("Unlit/Transparent");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
         Ai = GameObject.Find("Hero").GetComponent<AIDestinationSetter>();
         anim = GetComponent<Animator>();

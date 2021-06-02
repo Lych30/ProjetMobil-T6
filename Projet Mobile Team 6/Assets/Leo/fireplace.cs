@@ -17,7 +17,7 @@ public class fireplace : MonoBehaviour
         used = false;
         coll2d = GetComponent<Collider2D>();
         herocoll2d = GameObject.Find("Hero").GetComponent<Collider2D>();
-        shaderDefault = Shader.Find("Unlit/Transparent");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
     }
 

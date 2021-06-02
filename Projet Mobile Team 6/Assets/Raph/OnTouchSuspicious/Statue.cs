@@ -24,8 +24,8 @@ public class Statue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        used = false; 
-        shaderDefault = Shader.Find("Sprites/Default");
+        used = false;
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
         coll2d = TriggerZone.GetComponent<Collider2D>();
         hero = GameObject.Find("Hero");

@@ -8,7 +8,7 @@ public class Piano : MonoBehaviour
     public AudioSource Rick;
     public Transform Destination;
     private SpriteRenderer rend;
-    private Shader shaderDefault;
+    public Shader shaderDefault;
     private AIDestinationSetter Ai;
     private const float GRIDSIZE = 3;
     public Animator anim;
@@ -16,7 +16,7 @@ public class Piano : MonoBehaviour
     private void Start()
     {
         used = false;
-        shaderDefault = Shader.Find("Unlit/Transparent");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
         Ai = GameObject.Find("Hero").GetComponent<AIDestinationSetter>();
         anim = GetComponent<Animator>();

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static int StaticMaxManifestation;
     public int MaxKey;
     public static int StaticMaxKey;
+    public Shader defaultshader;
 
     public Text Key, Obstacles, Manifestation;
 

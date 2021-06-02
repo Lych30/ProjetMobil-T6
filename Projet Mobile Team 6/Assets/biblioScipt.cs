@@ -7,7 +7,7 @@ public class biblioScipt : MonoBehaviour
     private Shader shaderDefault;
     private void Start()
     {
-        shaderDefault = Shader.Find("Unlit/Transparent");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
     }
     private void OnMouseUpAsButton()
     {

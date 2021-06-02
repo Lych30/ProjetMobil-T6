@@ -11,7 +11,7 @@ public class Porte : MonoBehaviour
 
     private void Start()
     {
-        shaderDefault = Shader.Find("Sprites/Default");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
 
     }

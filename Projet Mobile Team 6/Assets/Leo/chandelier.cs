@@ -24,7 +24,7 @@ public class chandelier : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll2d = TriggerZone.GetComponent<Collider2D>();
         herocoll2d = GameObject.Find("Hero").GetComponent<Collider2D>();
-        shaderDefault = Shader.Find("Unlit/Transparent");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
     }
 

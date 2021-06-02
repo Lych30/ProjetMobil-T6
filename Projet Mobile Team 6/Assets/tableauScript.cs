@@ -25,7 +25,7 @@ public class tableauScript : MonoBehaviour
     void Start()
     {
         used = false;
-        shaderDefault = Shader.Find("Sprites/Default");
+        shaderDefault = GameObject.Find("GameManager").GetComponent<GameManager>().defaultshader;
         rend = GetComponent<SpriteRenderer>();
         coll2d = TriggerZone.GetComponent<Collider2D>();
         hero = GameObject.Find("Hero");

@@ -14,7 +14,12 @@ namespace Pathfinding
         GooglePlayGamesManager instance;
         private void Awake()
         {
-            PlayGamesPlatform.DebugLogEnabled = true;
+            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
+        // requests an ID token be generated.  This OAuth token can be used to
+        //  identify the player to other services such as Firebase.
+        .Build();
+            PlayGamesPlatform.InitializeInstance(config);
+            //PlayGamesPlatform.DebugLogEnabled = true;
             PlayGamesPlatform.Activate();
 
         }
