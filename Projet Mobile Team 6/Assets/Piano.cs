@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class Piano : MonoBehaviour
 {
+    public AudioSource Rick;
     public Transform Destination;
     private SpriteRenderer rend;
     private Shader shaderDefault;
@@ -24,7 +25,8 @@ public class Piano : MonoBehaviour
     {
         if (!used && GameManager.StaticMaxManifestation>0)
         {
-            anim.SetTrigger("music");
+            Rick.Play();
+            anim.SetTrigger("Trigger");
             used = true;
             rend.material.shader = shaderDefault;
             Ai.SetTarget(Instantiate(Destination, new Vector3(transform.position.x, transform.position.y - 2 * GRIDSIZE), new Quaternion(),transform)); ;

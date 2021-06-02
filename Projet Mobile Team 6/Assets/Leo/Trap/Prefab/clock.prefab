@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6845553902257614693}
   - component: {fileID: 6845553902257614714}
   - component: {fileID: 6845553902257614715}
+  - component: {fileID: -5996907444497443396}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -144,3 +145,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {fileID: 328508965752020029, guid: ae104ac2c6eb04f49a5b617130c626f3, type: 3}
   anim: {fileID: 6845553902257614693}
+--- !u!114 &-5996907444497443396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845553902257614712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed3ef3fcb938024696128ffa0d83f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

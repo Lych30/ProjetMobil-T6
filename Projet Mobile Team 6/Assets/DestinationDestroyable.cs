@@ -28,6 +28,10 @@ public class DestinationDestroyable : MonoBehaviour
         {
         GetComponentInParent<Animator>().SetTrigger("End");
         }
+        if (GetComponentInParent<Piano>())
+        {
+            GetComponentInParent<Piano>().Rick.Stop();
+        }
 
         GameObject.Find("Hero").GetComponent<AIPath>().maxSpeed = 3;
     }

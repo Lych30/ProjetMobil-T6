@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7615123873069178336}
   - component: {fileID: 7615123873069178343}
   - component: {fileID: 7615123873069178342}
+  - component: {fileID: 2704536302157773778}
   m_Layer: 3
   m_Name: biblioPrefab
   m_TagString: Untagged
@@ -142,3 +143,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2704536302157773778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615123873069178341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed3ef3fcb938024696128ffa0d83f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
