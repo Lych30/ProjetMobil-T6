@@ -100,6 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debris: {fileID: 7705820899646015951, guid: 4b9cfcee1db23e94cac1f50f9a4fc226, type: 3}
   TriggerZone: {fileID: 2678168209164088241}
+  debris:
+  - {fileID: 21300000, guid: e69523b34f4cba1489be2ccf88a819ea, type: 3}
+  - {fileID: 21300000, guid: ab2bd8d94cd461149a59f68f469c2607, type: 3}
+  - {fileID: 21300000, guid: 14b7f40cf70d89e4ab2261d171501f78, type: 3}
+  - {fileID: 21300000, guid: db972173fdf93bb4087a12a845ecdcda, type: 3}
+  "tomb\xE9": {fileID: 21300000, guid: 20cdcc0e400e1924cbf41077732f3475, type: 3}
 --- !u!50 &2179911128050893529
 Rigidbody2D:
   serializedVersion: 4
