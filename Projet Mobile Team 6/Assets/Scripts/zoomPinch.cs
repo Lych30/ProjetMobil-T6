@@ -8,6 +8,11 @@ public class zoomPinch : MonoBehaviour
     public float zoomOutMin = 1;
     public float zoomOutMax = 8;
 
+    [SerializeField]
+    Transform BottomLeft;
+    [SerializeField]
+    Transform TopRight;
+
     // Update is called once per frame
     private void Start()
     {
@@ -41,7 +46,11 @@ public class zoomPinch : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Camera.main.transform.position += direction;
+            if((transform.position + direction).x < TopRight.position.x && (transform.position + direction).x > BottomLeft.position.x && (transform.position + direction).y < TopRight.position.y && (transform.position + direction).y > BottomLeft.position.y)
+            {
+                Camera.main.transform.position += direction;
+            }
+
         }
         if (Input.touchCount == 1)
         {
