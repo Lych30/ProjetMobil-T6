@@ -43,7 +43,7 @@
   </files>
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.Team6.ProjetMobileTeam6" />
+    <setting name="bundleId" value="com.iimjv24T6.GhostlyHunt" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="False" />
